@@ -2,5 +2,10 @@
 // You should implement your task here.
 
 module.exports = function towelSort (matrix) {
-  return [];
+  if (matrix === undefined || matrix.length == 0) return []
+  matrix.forEach((item, index) => !(index % 2) ? item : item.reverse())
+  // result = [].concat.apply([], matrix)
+  return matrix.reduce(function(prev, next) {
+    return prev.concat(next);
+  })
 }
